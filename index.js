@@ -15,4 +15,9 @@ client.connect(err => {
 app.get('/',(req,res)=>{
     console.log("api connected")
     res.send("hello world")
+});
+
+
+app.listen(5000,()=>{
+    console.log(port)
 })

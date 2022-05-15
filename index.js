@@ -9,6 +9,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 client.connect(err => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
+  console.log("data base connected")
   client.close();
 });
 
@@ -19,5 +20,5 @@ app.get('/',(req,res)=>{
 
 
 app.listen(5000,()=>{
-    console.log(port)
+    console.log(port);
 })

@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const port = 5000;
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://dbuser1:VIDtPXVuRd4GoRGU@cluster0.vtwog.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";

@@ -9,7 +9,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 async function run(){
    try{
-
+     await client.connect();
    }
    finally{
      await client.close();

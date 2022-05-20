@@ -8,9 +8,9 @@ const uri = "mongodb+srv://dbuser1:VIDtPXVuRd4GoRGU@cluster0.vtwog.mongodb.net/m
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 async function run(){
-  
-}
 
+}
+run().catch(console.dir)
 app.get('/',(req,res)=>{
     console.log("api connected")
     res.send("hello world")

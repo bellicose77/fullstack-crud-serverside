@@ -12,6 +12,11 @@ async function run(){
      await client.connect();
      const database = client.db("UsersInfo");
      const userdetails = database.collection("UserDetails");
+     const doc = {
+      Name: "Record of a Shriveled Datum",
+      Email: "No bytes, no problem. Just insert a document, in MongoDB",
+    }
+
    }
    finally{
      await client.close();

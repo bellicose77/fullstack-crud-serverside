@@ -16,6 +16,8 @@ async function run(){
       Name: "Record of a Shriveled Datum",
       Email: "No bytes, no problem. Just insert a document, in MongoDB",
     }
+    const result = await userdetails.insertOne(doc);
+    console.log(`A document was inserted with the _id: ${result.insertedId}`);
 
    }
    finally{

@@ -30,6 +30,10 @@ app.get('/',(req,res)=>{
     res.send("hello world");
 });
 
+app.post('user',async(req,res)=>{
+  console.log("post api");
+})
+
 
 app.listen(5000,()=>{
     console.log(port);

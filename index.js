@@ -35,7 +35,9 @@ app.get('/',(req,res)=>{
 });
 
 app.post('/user',async(req,res)=>{
-  console.log(req.body);
+  const userdata =req.body;
+  const result = await userdetails.insertOne(userdata);
+  res.send(result);
 })
 
 

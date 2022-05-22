@@ -16,13 +16,13 @@ async function run(){
      await client.connect();
      const database = client.db("UsersInfo");
      const userdetails = database.collection("UserDetails");
-    //  const doc = {
-    //   Name: "Record of a Shriveled Datum",
-    //   Email: "No bytes, no problem. Just insert a document, in MongoDB",
-    // }
-    // const result = await userdetails.insertOne(doc);
-    // console.log(`A document was inserted with the _id: ${result.insertedId}`);
 
+     app.post('/user',async(req,res)=>{
+      const userdata =req.body;
+      const result = await userdetails.insertOne(userdata);
+      res.json(result);
+    });
+    
    }
    finally{
      await client.close();
@@ -34,11 +34,7 @@ app.get('/',(req,res)=>{
     res.send("hello world");
 });
 
-app.post('/user',async(req,res)=>{
-  const userdata =req.body;
-  const result = await userdetails.insertOne(userdata);
-  res.send(result.json);
-})
+
 
 
 app.listen(5000,()=>{

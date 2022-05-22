@@ -1,5 +1,6 @@
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const cors = require('cors');
 const app = express();
 
 app.use(cors());
@@ -15,12 +16,12 @@ async function run(){
      await client.connect();
      const database = client.db("UsersInfo");
      const userdetails = database.collection("UserDetails");
-     const doc = {
-      Name: "Record of a Shriveled Datum",
-      Email: "No bytes, no problem. Just insert a document, in MongoDB",
-    }
-    const result = await userdetails.insertOne(doc);
-    console.log(`A document was inserted with the _id: ${result.insertedId}`);
+    //  const doc = {
+    //   Name: "Record of a Shriveled Datum",
+    //   Email: "No bytes, no problem. Just insert a document, in MongoDB",
+    // }
+    // const result = await userdetails.insertOne(doc);
+    // console.log(`A document was inserted with the _id: ${result.insertedId}`);
 
    }
    finally{
@@ -33,8 +34,8 @@ app.get('/',(req,res)=>{
     res.send("hello world");
 });
 
-app.post('user',async(req,res)=>{
-  console.log("post api");
+app.post('/user',async(req,res)=>{
+  console.log(req.body);
 })
 
 

@@ -17,6 +17,10 @@ async function run(){
      const database = client.db("UsersInfo");
      const userdetails = database.collection("UserDetails");
 
+     app.get('/user', async(req,res)=>{
+
+     })
+
      app.post('/user',async(req,res)=>{
       const userdata =req.body;
       const result = await userdetails.insertOne(userdata);

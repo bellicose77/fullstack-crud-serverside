@@ -20,6 +20,7 @@ async function run(){
      app.post('/user',async(req,res)=>{
       const userdata =req.body;
       const result = await userdetails.insertOne(userdata);
+      console.log("new user",result);
       res.json(result);
     });
     
@@ -28,7 +29,8 @@ async function run(){
      //await client.close();
    }
 }
-run().catch(console.dir)
+run().catch(console.dir);
+
 app.get('/',(req,res)=>{
     console.log("api connected");
     res.send("hello world");

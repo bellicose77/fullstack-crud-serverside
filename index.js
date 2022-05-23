@@ -18,7 +18,7 @@ async function run(){
      const userdetails = database.collection("UserDetails");
 
      app.get('/user', async(req,res)=>{
-
+           res.send("user coming for database");
      })
 
      app.post('/user',async(req,res)=>{

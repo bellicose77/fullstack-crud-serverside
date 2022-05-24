@@ -37,7 +37,8 @@ async function run(){
       const id = req.params.id;
       const query = {_id: ObjectId(id)};
       const result = await userdetails.deleteOne(query);
-      console.log("deleted hitted",result);
+      res.json(result);
+      // console.log("deleted hitted",result);
     })
     
    }

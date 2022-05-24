@@ -1,7 +1,9 @@
 const express = require('express');
-const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
+
 const cors = require('cors');
+
 const app = express();
 
 app.use(cors());
@@ -34,7 +36,8 @@ async function run(){
     app.delete('/user/:id', async(req,res)=>{
       const id = req.params.id;
       const query = {_id: ObjectId(id)};
-      console.log("deleted hitted",id);
+      const result = await userdetails.deleteOne(query);
+      console.log("deleted hitted",result);
     })
     
    }

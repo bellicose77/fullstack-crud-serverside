@@ -20,8 +20,8 @@ async function run(){
      app.get('/user', async(req,res)=>{
         const cursor = userdetails.find({});
         const users = await cursor.toArray();
-           res.send(users);
-     })
+        res.send(users);
+     });
 
      app.post('/user',async(req,res)=>{
       const userdata =req.body;
@@ -29,6 +29,10 @@ async function run(){
       console.log("new user",result);
       res.json(result);
     });
+
+    app.delete('/user/:id', async(req,res)=>{
+      console.log("deleted hitted");
+    })
     
    }
    finally{

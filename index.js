@@ -29,6 +29,7 @@ async function run(){
        const id = req.params.id;
        const query = {_id:ObjectId(id)};
        const result = await userdetails.findOne(query);
+       res.json(result);
        console.log("app i hitted",id);
      })
 

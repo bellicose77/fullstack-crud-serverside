@@ -25,6 +25,10 @@ async function run(){
         const users = await cursor.toArray();
         res.send(users);
      });
+     app.get('/user/:id', async(req,res)=>{
+       const id = req.params.id;
+       console.log("app i hitted",id);
+     })
 
      app.post('/user',async(req,res)=>{
       const userdata =req.body;
@@ -32,7 +36,7 @@ async function run(){
       console.log("new user",result);
       res.json(result);
     });
-
+ 
     app.delete('/user/:id', async(req,res)=>{
       const id = req.params.id;
       const query = {_id: ObjectId(id)};

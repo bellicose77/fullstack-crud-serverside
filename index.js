@@ -31,7 +31,7 @@ async function run(){
        const result = await userdetails.findOne(query);
        res.json(result);
        console.log("app i hitted",id);
-     })
+     });
 
      app.post('/user',async(req,res)=>{
       const userdata =req.body;
@@ -39,6 +39,10 @@ async function run(){
       console.log("new user",result);
       res.json(result);
     });
+
+    app.put('/user/:id', async(req,res)=>{
+      
+    })
  
     app.delete('/user/:id', async(req,res)=>{
       const id = req.params.id;

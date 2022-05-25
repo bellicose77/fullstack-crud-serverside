@@ -44,6 +44,13 @@ async function run(){
       const id = req.params.id;
       const updatedata = req.body;
       const filter = {_id: ObjectId(id)};
+      const option = {upsert:true};
+      const updateDoc = {
+        $set: {
+          name: updatedata.name,
+          email:updatedata.email
+        },
+      };
       console.log("put api",id);
     })
  

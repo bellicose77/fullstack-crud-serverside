@@ -51,7 +51,9 @@ async function run(){
           email:updatedata.email
         },
       };
-      console.log("put api",id);
+      const result = await userdetails.updateOne(filter,updateDoc,option);
+      res.json(result);
+      // console.log("put api",id);
     })
  
     app.delete('/user/:id', async(req,res)=>{

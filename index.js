@@ -42,6 +42,8 @@ async function run(){
 
     app.put('/user/:id', async(req,res)=>{
       const id = req.params.id;
+      const updatedata = req.body;
+      const filter = {_id: ObjectId(id)};
       console.log("put api",id);
     })
  

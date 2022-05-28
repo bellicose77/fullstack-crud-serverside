@@ -1,5 +1,6 @@
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
+import path from 'path';
 const ObjectId = require('mongodb').ObjectId;
 
 const cors = require('cors');
@@ -8,6 +9,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname,'/build')));
 const port = 5000;
 
 
@@ -71,14 +73,7 @@ async function run(){
 }
 run().catch(console.dir);
 
-app.get('/',(req,res)=>{
-    console.log("api connected");
-    res.send("hello world");
-});
-
-
-
-
 app.listen(5000,()=>{
     console.log(port);
-})
+});
+app.get('*',(req,res)=>)
